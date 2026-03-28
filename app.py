@@ -9,10 +9,11 @@ import json
 import os
 
 yes = { **dotenv_values('.cors') }
+app_ports = { **dotenv_values(".app_envs") }
 app = Flask(__name__)
 cors = CORS(app,resources=yes["allow"])
 
-app_port = os.getenv('IPERF_WEB_PORT', '5000')
+app_port = os.getenv(f"{app_ports['env']}", f"{app_ports['default']}")
 debug_mode = str_to_boolean(os.getenv('IPERF_WEB_DEBUG_MODE', False))
 
 # Route to display the page
@@ -28,7 +29,7 @@ def avail_tools():
 
 # Route to obtain settings for a given test.
 @app.route('/get_settings/<test_type>')
-def get_settings(test_type):
+def get_settings(test_type: str):
     configFile = "config/config.json"
     if Path(configFile).is_file():
         with open(configFile, 'r') as f:

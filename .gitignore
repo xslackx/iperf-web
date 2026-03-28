@@ -2,4 +2,6 @@ bin/
 lib/
 pyvenv.cfg
 .cors
+.app_envs
 lib64
+config.json
