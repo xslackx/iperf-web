@@ -20,6 +20,12 @@ debug_mode = str_to_boolean(os.getenv('IPERF_WEB_DEBUG_MODE', False))
 def index():
     return render_template('index.html')
 
+# Display available usage tools
+@app.route('/get_tools')
+def avail_tools():
+    return {"tool_available": [ 'dig', 'iperf', 'mtr', 'nc',
+                               'nslookup', 'ping', 'traceroute' ]}
+
 # Route to obtain settings for a given test.
 @app.route('/get_settings/<test_type>')
 def get_settings(test_type):
