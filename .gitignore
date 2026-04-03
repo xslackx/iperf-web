@@ -5,3 +5,5 @@ pyvenv.cfg
 .app_envs
 lib64
 config.json
+__pycache__
+stand.py
