@@ -12,7 +12,9 @@ class MacUtils:
         self.oui_vendors: dict = []
         self.mac_full = None
         self.mac_oui = None
-        
+    
+    def get_update_oui(self) -> csv: pass
+    
     def format_addr(self) -> None:
         for sep in self.separators:
             if self.mac.find(sep) == 2:
