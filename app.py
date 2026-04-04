@@ -118,5 +118,12 @@ def run_test():
 
     return Response(run_command(command), mimetype='text/html')
 
+@app.route('/ipcalc')
+def ipcalc(): pass
+
+@app.route('/macwhois')
+def maclookup(): pass
+
+
 if __name__ == '__main__':
     app.run(debug=debug_mode,host='0.0.0.0',port=app_port)

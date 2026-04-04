@@ -1,0 +1,14 @@
+{
+    "dig": [
+        {
+            "name": "ineedmyip.com",
+            "dig_target": "ineedmyip.com",
+            "dig_parameters": "+short"
+        },
+        {
+            "name": "ineedmyip.com reverse DNS",
+            "dig_target": "140.82.49.8",
+            "dig_parameters": "-x"
+        }
+    ]
+}

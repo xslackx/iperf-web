@@ -1,0 +1,9 @@
+{
+    "nc": [
+        {
+            "name": "ineedmyip.com SSH port 22",
+            "nc_target": "ineedmyip.com",
+            "nc_port": "22"
+        }
+    ]
+}

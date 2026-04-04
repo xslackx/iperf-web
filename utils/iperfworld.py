@@ -19,11 +19,13 @@ class ImportIperf3Servers:
 
     def format_content(self, host) -> dict:
         name = host["PROVIDER"]+"-"+host['SITE']+"-"+host['COUNTRY']+"-"+host['IP/HOST']
+        port = host['PORT'] if len(host['PORT'].split('-')) == 1 \
+            else host['PORT'].split('-')[0]
         return {
                 "name": name,
                 "iperf_version": "3",
                 "iperf_target": host['IP/HOST'],
-                "iperf_port": host['PORT'],
+                "iperf_port": port,
                 "iperf_conn_type": "TCP",
                 "iperf_timeout": "10",
                 "iperf_parameters": "--format m"
